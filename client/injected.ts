@@ -252,6 +252,9 @@ if ('WebSocket' in window && !block) {
                 appendMessage('HIDE')
               }
 
+              const event = new Event("fsBodyUpdate");
+              window.dispatchEvent(event);
+
               // scroll element into view (center of page)
               const el = document.querySelector(`[data-highlight="true"]`)
               if (el) {
