@@ -183,6 +183,8 @@ if ('WebSocket' in window && !block) {
 
     const injectBody = body => {
       document.body.innerHTML = body
+      const event = new Event("fsBodyUpdate");
+      window.dispatchEvent(event);
     }
 
     let _diffDOMStatus = ''
